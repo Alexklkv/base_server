@@ -1,0 +1,69 @@
+			"I",			// ADMIN_REQUEST(1); inner_id:I
+			"ISSBIIII[W]BBWBBBI[BI]",	// ADMIN_EDIT(2); inner_id:I, name:S, tower:S, sex:B, gold:I, souls:I, respect:I, experience:I, flags:[W], main_characteristics:B, unallocated_stats_points:B, education_state:W, boost_totems_revenue:B, totems_reset:B, vip_need_change:B, vip_left:I, boosters:[booter_type:B, left:I]
+
+			"",			// HELLO(3);
+			"LBSW,SII",		// LOGIN(4); net_id:L, type:B, auth_key:S, version:W, session_key:S, referrer:I, tag:I
+			"[I]I",			// REQUEST(5); player_id:[I], mask:I
+			"[L]BI",		// REQUEST_NET(6); net_id:[L], type:B, mask:I
+			"SBISSS",		// INFO(7); name:S, sex:B, bday:I, photo:S, profile:S, tower_name:S
+			"",			// REFILL(8);
+			"IIIII[I]",		// BUY(9); good_id:I, target_id:I, gold:I, souls:I, data:I, data:[I]
+			"L",			// REFERRER(10); referrer_id:L
+
+			"",			// CARDS_REQUEST(11);
+			"[W]",			// ACCEPT_DECK(12); card_id:[W]
+			"[W]",			// ACCEPT_SPELLS(13); spell_id:[W]
+			"B",			// SET_MAIN_CHARACTERISTIC(14); stat_id:B
+			"BBBBBBBB",		// WEAR(15); pauldron:B, body:B, gloves:B, legs:B, shoes:B, helmet:B, weapon:B, shield:B
+			"BBBB",			// FACE(16); hair:B, eyes:B, node:B, mouth:B
+			"BB",			// DECORATION(17); throne:B, wallpaper:B
+			"BW",			// FLAG_SET(18); flag_id:B, value:W
+			"B",			// TOTEM_REVENUE(19); type:B
+			"WB",			// SHARPENING(20); card_id:W, item_id:B
+			"BBI",			// RATING_PAGE(21); rating_category:B, rating_type:B, page:I
+			"",			// RATINGS_SIZES(22);
+			"[I]",			// FRIENDS_ADD(23); friends_ids:[I]
+			"[I]",			// FRIENDS_REMOVE(24); friends_ids:[I]
+
+			"W",			// ARENA_PLAY_BOT(25); location_id:W
+			",I",			// ARENA_PLAY(26); attacker_id:I
+			"",			// ARENA_LOADED(27);
+			"",			// ARENA_LEAVE(28);
+
+			"WB",			// ROOM_CARD_ADD(29); card_id:W, slot:B
+			"WB",			// ROOM_CARD_MOVE(30); card_id:W, slot_to:B
+			"WW",			// ROOM_CARD_ATTACK(31); attacker_id:W, target_id:W
+			"",			// ROOM_END_TURN(32);
+			"",			// ROOM_TURN_FINISHED(33);
+			"WI,W",			// ROOM_SPELL(34); spell_id:W, player_id:I, card_id:W
+			"",			// ROOM_NEXT_ACTION(35);
+			"B",			// ROOM_BONUS(36); gold_id:B
+			"IW",			// ROOM_CARD_CLICK(37); player_id:I, card_id:W
+			"S",			// ROOM_CHAT(38); message:S
+			"IW",			// ROOM_NEW_CARD_DATA(39); summoner_id:I, card_id:W
+
+			"IS",			// MESSAGES_NEW(40); recipient_id:I, text:S
+			"I",			// MESSAGES_REQUEST(41); interlocutor_id:I
+
+			"I",			// FRIEND_VISITED(42); visited_id:I
+			"B",			// EDUCATION_TRY_COMPLETE(43); education_state_id:B
+
+			"[IB]",			// GIFT_SEND(44); [target_id:I, gift:B]
+			"I",			// GIFT_ACCEPT(45); gift_id:I
+
+			"[WWWWW]",		// CHECK_CARD_PARAMS(46); params:[id:W, baseHealth:W, baseDamage:W, addlHealth:W, addlDamage:W]
+			"WBBB[W]",		// CARD_SACRIFICE(47); card_id:W, is_sacrifice:B, slot:B, sacrifice_type:B, victims:[W]
+
+			"IBW",			// SUPPORTS_REQUEST(48); assistant_id:I, type:B, object_id:W
+			"IBW",			// SUPPORTS_ACCEPT(49); requester_id:I, type:B, object_id:W
+
+			"W",			// QUESTS_CANCEL(50); quest_id:W
+			"",			// QUESTS_REQUEST(51);
+			"W",			// QUESTS_FINISH(52); quest_id:W
+
+			"",			// DEBUG_CLEAR(53);
+
+			"I",			// PVP_INVITE_REFUSE(54); attacker_id:I
+
+			"",			// ENERGY_REQUEST(55);
+			"B",			// ENERGY_USE_BOOSTER(56); type:B

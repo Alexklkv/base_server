@@ -1,0 +1,185 @@
+#pragma once
+
+#include <unordered_map>
+#include <unordered_set>
+
+namespace ability
+{
+
+enum Type : uint16_t;
+
+enum Category : uint8_t
+{
+	CARD,
+	SPELL,
+	COMBO,
+	LOCATION,
+	EQUIPMENT,
+	SHARPENING,
+	QUEST,
+	TROPHIES,
+
+	MAX_CATEGORY
+};
+
+enum Modifier : uint8_t
+{
+	NONE_MODIFIER = 0,
+
+	MODIFY_INJUIRE,
+	MODIFY_ATTACK,
+	MODIFY_DODGE,
+	MODIFY_CRITICAL,
+	MODIFY_CRITICAL_FAILURE,
+	MODIFY_HEALTH,
+	MODIFY_SPELL_INJUIRE,
+	MODIFY_SPELL_INJUIRE_FAILURE_CHANCE,
+
+	BLOCK_IN_RESPONSE,
+	BLOCK_MOVE,
+	BLOCK_CAST,
+	BLOCK_SPELLS,
+	BLOCK_PASSIVE,
+	BLOCK_MODIFIER_EFFECT,
+	BLOCK_SLOT,
+	BLOCK_PASSIVE_USE,
+
+	ALWAYS_FIRST,
+	CAN_ATTACK_FROM_REAR,
+	SHIELD,
+	PROVOCATION,
+	SLEEP,
+	POLYMORF,
+	ADDITIONAL_ABILITY,
+
+	DATURA,
+	WAR_FOG,
+	ASTRAL_STORM,
+	SPOLIED_FOLIO,
+	DEAFNESS,
+	SUMMONER_BURDEN,
+	WRONG_SUMMON,
+
+	CAN_RESPOND_FLYING
+};
+
+enum Duration : uint8_t
+{
+	INFINITE,
+	TEMPORARY,
+	CYCLIC
+};
+
+enum Time : uint8_t
+{
+	CAST,
+	COMBINATION,
+	IMPACT,
+	UPDATE,
+	SOMETHING_DIED,
+
+	AFTER_PLACEMENT,
+	AFTER_FIRST_PLACEMENT,
+	AFTER_MOVE,
+	AFTER_ATTACK,
+	AFTER_DEFENCE,
+	AFTER_ROUND_START,
+	AFTER_ROUND_END,
+	AFTER_ATTACK_DEATH,
+	AFTER_RESPONSE_DEATH,
+	AFTER_KILL,
+	AFTER_DAMAGE_CAUSED,
+	AFTER_INJUIRE
+};
+
+enum ModificationType : uint8_t
+{
+	CHANGE_ATTACK_DAMAGE,
+	CHANGE_ATTACK_INJUIRE,
+	CHANGE_RESPONSE_DAMAGE,
+	CHANGE_RESPONSE_INJUIRE,
+	CHANGE_SPELL_EFFECT
+};
+
+enum Direction : uint8_t
+{
+	ATTACK_FROM,
+	ATTACK_TO,
+	RESPONSE_FROM,
+	RESPONSE_TO
+};
+
+enum Handle : uint8_t
+{
+	HANDLE_ATTACK,
+	HANDLE_INJUIRE,
+
+	USE_OBTAINED_INJUIRE,
+	USE_CAUSED_DAMAGE,
+	USE_CAUSED_SPELL_DAMAGE
+};
+
+enum DeadStatus : uint8_t
+{
+	FRIEND_DIED,
+	ENEMY_DIED,
+	FRIEND_ATTACKED,
+	ENEMY_ATTACKED
+};
+
+enum Effect : uint8_t
+{
+	BLESSING,
+	CURSE,
+	HEALING,
+	DAMAGE,
+	OTHER_NEGATIVE,
+	OTHER_POSITIVE,
+	OTHER,
+
+	MAX_EFFECT
+};
+
+enum Action : uint8_t
+{
+	NO_ACTION = 0,
+
+	ADD_EFFECT,
+	CHANGE_EFFECT,
+	CLEAR_EFFECT,
+	ATTACK,
+	MOVE,
+	REMOVE,
+	HEAL,
+	SHIELD_ACTION,
+	UNBLOCK,
+	KILL,
+	CHANGE_MANA,
+	SUMMON,
+	TRANSFORM,
+	ERASE,
+	ADD_ON_SLOT
+};
+
+typedef std::unordered_set<Type, std::hash<uint16_t>> abilities_t;
+
+static const std::unordered_map<Modifier, int8_t, std::hash<uint8_t>> STATS_MODIFIERS =
+{
+	{MODIFY_INJUIRE, -1},
+	{MODIFY_ATTACK, 1},
+	{MODIFY_HEALTH, 1},
+	{MODIFY_CRITICAL, 1},
+	{MODIFY_DODGE, 1},
+	{MODIFY_SPELL_INJUIRE, 1}
+};
+
+bool is_stat_modifier(ability::Modifier modifier);
+
+#ifdef DEBUG
+#include <string>
+
+std::string debug_ability_category(Category category);
+std::string debug_modifier(Modifier modifier);
+#endif
+
+}

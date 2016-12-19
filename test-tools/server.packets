@@ -1,0 +1,51 @@
+			"B,ISSBIIII[W]BW",		// ADMIN_INFO(1); inner_id:I, energy:I, max_energy:I, mana:I, coins_free:I, coins:I, nuts:I, flags:[flag:B, value:B], training:[step:B, value:B], ban_type:B, ban_reason:B, ban_moderator:I, ban_finish:I, cast_items:[B], super_pack_time:I, discounts:[discount_type:B, discount_time:I], feathers:B, data:[type:B, location_id:B, progress:B, expires:I], day_start:W, day_current:W, day_bonus:B
+			"",				// HELLO(2);
+			"B,IIS[W][][][][][][]B[]II[]",	// LOGIN(3); status:B, inner_id:I, client_id:I, tower:S, flags:[value:W], locations:[], statistics:[], totems:[], items:[], equipment:[], decoration:[], slots:B, unread_messages_senders:[], time_to_next_midnight:[], vip_left:I, friends:[]
+			"AI",				// INFO(4); data:A, mask:I
+			"AI",				// INFO_NET(5); data:A, mask:I
+			"I",				// ONLINE(6); online:I
+			"BII",				// BALANCE(7); reason:B, coins:I, acorns:I
+			"BI",				// EXPERIENCE(8); reason:B, exp:I
+			"BI",				// RESPECT(9); reason:B, value:I
+			"B,IIIIIA",			// BUY(10); good_id:I, target_id:I, gold_price:I, souls_price:I, data:I, data_group:A
+			"BI[BWI]",			// REWARD(11); category:B, data:I, game_items:[category:B, item_type:W, count:I]
+			"B[]",				// CARDS_REQUEST(12); reason:B, cards:[active_group:[id:W, type:W, sharp_item:B, sharp_times:B, level:B, health:W, damage:W], upgrading_group:[id:W, slot:B, tme_left:I], inactive_group:[id:W, type:W, sharp_item:B, sharp_times:B, level:B, health:W, damage:W]]
+			"B",				// CARD_SHARP(13); is_sharped:B
+
+			"[BIBBI]",			// QUESTS_INTO(14); quests:[id:B, progress:I, reward_level_group:B, reward_type:B, data:I]
+			"BI",				// QUEST_PROGRESS(15); quest:B, current_progress:I
+			"BB,BBI",			// QUEST_FINISH(16); status:B, quest_id:B, reward_level:B, reward_type:B, reward_data:I
+			"B[B]",				// MAIN_QUEST_PROGRESS(17); quest_id:B, locations:[location_id:B]
+			"A",				// MAIN_QUEST_COMPLETED(18); group_rewards:A
+
+			"BBI[I]",			// RATING_PAGE(19); category:B, type:B, page_num:I, page:[player_id:I]
+			"A",				// RATINGS_SIZES(20); group:A
+			"BBW",				// DAILY_BONUS(21); current_day:B, bonus:B, data:W
+			"I[I]",				// RATING_PAGE(22); page_num:I, page:[player_id:I]
+			"BI",				// TROPHY_BONUS(23); trophy:B, amount:I
+
+			"B,I",				// ARENA(24); status:B, first_player_id:I
+			"[BB[IW]L[IWL]]",		// ARENA_ACTIONS(25); category:B, action_type:B, sources:[summoner_id:I, card_id:W], data:L, targets:[summoner_id:I, card_id:W, data:L]
+			"",				// ARENA_NEXT_ROUND(26);
+			"",				// ARENA_TURN_FINISHED(27);
+			"IW",				// CARD_CLICK(28); player_id:I, card_id:W
+			"S",				// CHAT(29); message:S
+			"A",				// BONUSES(30); data:A
+			"B,WB",				// BONUS_COLLECT(31); bonus_id:B, card_id:W, amount:B
+			"WWBBBWW",			// CARD_DATA(32); id:W, type:W, sharp_item:B, sharp_times:B, level:B, health:W, damage:W
+			"BWWWWAA",			// RESULT(33); is_winner:B, experience:W, gold:W, respect:W, souls:W, items:A, cards:A
+
+			"IA",				// MESSAGES(34); id:I, messages:A
+
+			"[IBI]B[I]",			// GIFTS_STORAGE(35); gifts:[id:I, type:B, sender_id:I, duration:I], limit:B, excluded_players:[id:I]
+			"BI,BW",			// GIFTS_ACCEPT(36); status:B, gift_id:I, gift_type:B, bonus_id:W
+
+			"[BWI[I][I][BWII][I]]",		// SUPPORTS_STORAGE(37); supports:[type:B, id:W, duration:I, requested:[I], accepted:[I]], requests:[type:B, id:W, requester_id:I, duration:I], friends:[friend_id:I]
+			"B,IBW",			// SUPPORTS_REQUEST(38); status:B, assistant_id:I, type:B, id:W
+			"IBWI",				// SUPPORTS_REQUESTS(39); requester_id:I, type:B, id:W, duration:I
+			"IBWI",				// SUPPORTS_SUPPORT(40); assistant_id:I, type:B, id:W, duration:I
+
+			"BW",				// FLAG_STATE(41); flag_type:B, flag:W
+			"B",				// SACRIFICE(42); status:B
+			"I",				// PVP_INVITE(43); player_id:I
+			"F",				// ENERGY_INFO(44); energy:F

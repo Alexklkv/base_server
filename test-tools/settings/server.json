@@ -1,0 +1,6 @@
+{
+	"host" : "88.212.207.7",
+	"port" : 55565,
+	"isVerbose" : true,
+	"reconnect" : false
+}
